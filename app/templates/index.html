@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCA Analysis</title>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 <body>
     <div id="app">
         <el-container>
             <el-header>
                 <el-row class="top">
-                    <el-col :span="6">
+                    <el-col :span="2">
                         <el-upload class="upload-demo" action="/upload"
-                            :on-success="handleUploadSuccess" multiple :limit="1">
+                            :on-success="handleUploadSuccess" :limit="1" :show-file-list="false">
                             <el-button size="small" type="primary">点击上传</el-button>
                         </el-upload>
                     </el-col>
-                    <el-col :span="6">
+                    <el-col :span="5">
                         <el-select v-model="target" placeholder="请选择目标列">
                             <el-option v-for="item in options" :key="item" :label="item" :value="item">
                             </el-option>
                         </el-select>
                     </el-col>
-                    <el-col :span="4">
+                    <el-col :span="3">
                         <el-button type="primary" @click="analyze">确认</el-button>
                     </el-col>
                 </el-row>
@@ -39,8 +41,7 @@
             </el-main>
         </el-container>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
     <script>
         new Vue({
             el: '#app',
@@ -78,4 +79,15 @@
         });
     </script>
 </body>
+<style>
+    .el-header {
+
+        margin: 30px;
+
+    }
+
+    .top {
+        display: flex;:
+    }
+</style>
 </html>
